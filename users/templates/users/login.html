@@ -1,0 +1,23 @@
+
+{%  extends "learning_logs/base.html" %}
+{% load bootstrap3 %}
+
+
+{%  block header %}
+<h2>log into your account</h2>
+{% endblock header %}
+{% block content %}
+    <form method="post" action="{% url 'users:login' %}" class="form">
+    {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+        <button name="submit" class="btn btn-primary">log in</button>
+        {% endbuttons %}
+    <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />
+</form>
+{% endblock content %}
+<!-- 上面整段代码说明如下：先在模板中加载了bootstrap3模板标签，然后定义了head块用来描述这个页面是做什么的 删除了之前的% if form.errors %
+ 因为django-bootstrap3会自动管理表单错误，然后使用模板标签{% bootstrap_form %}来显示表单，同时将Bootstrap样式规则
+ 应用于各个表单元素。-->
+
+
