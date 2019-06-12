@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = 'sdj!c@k3xs1vo*8lvxhs*t^-1q(_f5741th7)oqa4q6kw*(x3g'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -74,7 +72,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'learning_log.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
@@ -84,7 +81,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -104,7 +100,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
@@ -118,7 +113,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
@@ -130,7 +124,7 @@ LOGIN_URL = '/users/login/'
 
 # django-bootstrap3的设置 jQuery是一个javaScript库,让你能够使用Bootstrap模板提供的一些
 # 交互式元素
-BOOTSTRAP3 = {'include_jquery': True,}
+BOOTSTRAP3 = {'include_jquery': True, }
 
 # heroku设置
 if os.getcwd() == '/app':
@@ -143,18 +137,9 @@ if os.getcwd() == '/app':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
     # 支持所有的主机头（host header)
-    ALLOWED_HOSTS =['*']
+    ALLOWED_HOSTS = ['*']
 
     # 静态资产配置
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    STATIC_ROOT = 'staticfiles'
-    STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-
-    """
-    上面的代码中使用了函数getcwd()，它获取当前的工作目录(当前运行的文件所在的目录)。 在Heroku部署中，这个目录总是/app。在本地部署中，
-    这个目录通常是项目文件夹的名称(就我们的项目而言，为learning_log)。这个if测试确保仅当项目被部署到Heroku时，才运行这个代码块。这
-    种结构让我们能够将同一个设置文件用于本地开发环境和在线服务器。
-    导入了dj_database_url，用于在Heroku上配置服务器。Heroku使用PostgreSQL 6(也叫Postgres)——一种比SQLite更高级的数据库;这些设置对
-    项目进行配置，使其在Heroku上 使用Postgres数据库。其他设置的作用分别如下:
-    支持HTTPS请求;让Django能够使用 Heroku的URL来提供项目提供的服务;设置项目，使其能够在Heroku上正确地提供静态 文件。
-    """
+    STATIC_ROOT = os.path.join(BASE_DIR,'static')
+    STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
