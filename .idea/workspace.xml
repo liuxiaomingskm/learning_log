@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca443c76-7717-4b27-9176-278584bef366" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/learning_log/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/learning_log/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="ca443c76-7717-4b27-9176-278584bef366" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/learning_log/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="2660">
+              <caret line="140" column="50" lean-forward="true" selection-start-line="140" selection-start-column="50" selection-end-line="140" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -57,12 +55,8 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/learning_log/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/learning_log/__init__.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -187,6 +181,12 @@
               <item name="learning_log" type="462c0819:PsiDirectoryNode" />
               <item name="learning_log" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="learning_log" type="b2602c69:ProjectViewProjectNode" />
+              <item name="learning_log" type="462c0819:PsiDirectoryNode" />
+              <item name="learning_log" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -276,12 +276,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1560065875701</updated>
-      <workItem from="1560065877741" duration="51642000" />
+      <workItem from="1560065877741" duration="51916000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51642000" />
+    <option name="totallyTimeSpent" value="51916000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="790" y="220" width="1441" height="816" extended-state="0" />
@@ -470,9 +470,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/learning_log/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/learning_log/static/placeholder.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -570,10 +567,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/learning_log/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/learning_log/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="2660">
+          <caret line="140" column="50" lean-forward="true" selection-start-line="140" selection-start-column="50" selection-end-line="140" selection-end-column="50" />
         </state>
       </provider>
     </entry>
