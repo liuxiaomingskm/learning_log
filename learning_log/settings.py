@@ -139,7 +139,7 @@ if cwd == '/app' or cwd[:4]=='/tmp':
 
     # 支持所有的主机头（host header)
     ALLOWED_HOSTS = ['learning-log-final.herokuapp.com']
-    DEBUG = False
+   
     # 静态资产配置
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
     STATIC_ROOT = 'staticfiles'
