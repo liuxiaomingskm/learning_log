@@ -1,14 +1,14 @@
 {% extends "learning_logs/base.html" %}
 
+
 {% block content %}
 
-  <form method="post" action="{% url 'users:register' %}">
+<form method="post" action="{% url 'users:register' %}">
     {% csrf_token %}
+    <!-- 这里使用了方法as_p, 让Django在表单中正确地显示所有的字段，包括错误消息-如果用户没有正确填写表单-->
     {{ form.as_p }}
-        
     <button name="submit">register</button>
-    <input type="hidden" name="next"
-      value="{% url 'learning_logs:index' %}" />
-  </form>
-    
+    <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />
+</form>
+
 {% endblock content %}
