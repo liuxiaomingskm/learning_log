@@ -18,6 +18,7 @@ Including another URLconf
 # url(r'^admin/'....)代码包含模块admin.site.urls， 该模块定义了可在管理网站中请求的所有URL
 from django.contrib import admin
 from django.urls import path, include
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('users.urls', namespace='users')),
