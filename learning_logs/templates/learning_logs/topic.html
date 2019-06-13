@@ -1,33 +1,31 @@
 {% extends 'learning_logs/base.html' %}
+
 {% block header %}
-    <h2>{{ topic }}</h2>
+  <h2>{{ topic }}</h2>
 {% endblock header %}
+
 {% block content %}
+  <p>
+    <a href="{% url 'learning_logs:new_entry' topic.id %}">add new entry</a>
+  </p>
 
-    <p>
-        <a href="{% url 'learning_logs:new_entry' topic.id %}">add new entry</a>
-    </p>
-
-    {% for entry in entries %}
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3>
-                    {{ entry.date_added|date:'M d, Y H:i' }}
-                    <small>
-                        <a href="{% url 'learning_logs:edit_entry' entry.id %}"> edit entry</a>
-                    </small>
-                </h3>
-            </div>
-            <div class="panel-body">
-                {{ entry.text|linebreaks }}
-            </div>
-        </div><!--panel-->
-    {% empty %}
-        There are no entries for this topic yet.
-    {% endfor %}
+  {% for entry in entries %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>
+          {{ entry.date_added|date:'M d, Y H:i' }}
+          <small>
+            <a href="{% url 'learning_logs:edit_entry' entry.id %}">
+              edit entry</a>
+          </small>
+        </h3>
+      </div>
+      <div class="panel-body">
+        {{ entry.text|linebreaks }}
+      </div>
+    </div> <!-- panel -->
+  {% empty %}
+    There are no entries for this topic yet.
+  {% endfor %}
 
 {% endblock content %}
-<!-- 我们首先将主题放在了header块中(见)。然后，我们删除了这个模板中以前使用的无序 列表结构。在处，我们创建了一个面板式div元素
-(而不是将每个条目作为一个列表项)，其中 包含两个嵌套的div:一个面板标题(panel-heading)div(见)和一个面板主体(panel-body) div(见)。
-其中面板标题div包含条目的创建日期以及用于编辑条目的链接，它们都被设置为<h3> 元素，而对于编辑条目的链接，还使用了标签<small>，使其比时间
-戳小些(见)。处是面板主体div，其中包含条目的实际文本。注意，只修改了影响页面外观的元素，对在 页面中包含信息的Django代码未做任何修改。-->

@@ -2,57 +2,62 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewpoint" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>learning Log</title>
+    <title>Learning Log</title>
 
     {% bootstrap_css %}
     {% bootstrap_javascript %}
-</head>
-<!-- 我们加载了django-bootstrap3中的模板标签集。接下来，我们将这个文件声明为使用 英语(见)编写的HTML文档(见)。HTML文件分为两个主
-要部分:头部(head)和主体(body); 在这个文件中，头部始于处。HTML文件的头部不包含任何内容:它只是将正确显示页面所需 的信息告诉浏览器。在
-'title'处，我们包含了一个title元素，在浏览器中打开网站“学习笔记”的 页面时，浏览器的标题栏将显示该元素的内容, 最后两行bootstrap的代码让
-django包含所有的Bootstrap样式文件， 启用在页面中使用的所有交互式行为，如可折叠的导航栏-->
-<body>
-<!-- Static navbar -->
-<nav class="navbar navbar-default navbar-static-top">
+
+  </head>
+  
+  <body>
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+          
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed"
+              data-toggle="collapse" data-target="#navbar"
+              aria-expanded="false" aria-controls="navbar">
+          </button>
+          <a class="navbar-brand" href="{% url 'learning_logs:index' %}">
+              Learning Log</a>
+        </div>
+        
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="{% url 'learning_logs:topics' %}">Topics</a></li>
+          </ul>
+          
+          <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+              <li><a>Hello, {{ user.username }}.</a></li>
+              <li><a href="{% url 'users:logout' %}">log out</a></li>
+            {% else %}
+              <li><a href="{% url 'users:register' %}">register</a></li>
+              <li><a href="{% url 'users:login' %}">log in</a></li>
+            {% endif %}
+          </ul>
+        </div><!--/.nav-collapse -->
+        
+      </div>
+    </nav>
+    
     <div class="container">
 
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed"
-                    data-toggle="collapse" data-target="#navbar"
-                    aria_expanded="false" aria-controls="navbar">
+      <div class="page-header">
+        {% block header %}{% endblock %}
+      </div>
+      <div>
+        {% block content %}{% endblock %}
+      </div>
 
-            </button>
-            <a class="navbar-brand" href="{% url 'learning_logs:index' %}">Learning Log</a>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-            <li><a href="{% url 'learning_logs:topics' %}">Topics</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            {% if user.is_authenticated %}
-            <li><a>Hello, {{ user.username }}.</a></li>
-            <li><a href="{% url 'users:logout' %}">log out</a></li>
-           {% else %}
-            <li><a href="{% url 'users:register' %}">register</a></li>
-            <li><a href="{% url 'users:login' %}">log in</a></li>
-           {% endif %}
-        </ul>
-    </div><!--/.nav-collapse-->
-    </div>
+    </div> <!-- /container -->
 
-</nav>
-<div class="container">
-    <div class="page-header">
-        {% block header %}{% endblock header%}
-    </div>
-<div>
-    {% block content %}{% endblock content %}
-</div>
-</div><!-- /container -->
-</body>
+  </body>
 </html>
